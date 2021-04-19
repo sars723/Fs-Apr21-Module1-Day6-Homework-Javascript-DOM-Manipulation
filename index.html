@@ -6,7 +6,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Java script DOM manipulation Homework</title>
   </head>
+  <style>
+    /* body {
+      color: ;
+    } */
+    img {
+      display: block;
+    }
+    .new-class-image-hidden {
+      display: none;
+    }
+    .new-class-image-visible {
+      display: block;
+    }
+  </style>
   <body>
+    <!--  You have been assigned to the creation of a Smartphone Shop Website. The homepage you're about to write is just a showcase of the products of the shop with some extra information. No shopping cart / checkout features are required.
+
+Complete exercises from 1 to 6 with just plain HTML. -->
+
+    <!-- EX1.: Add an h1 tag with the name of your shop -->
+    <h1 class="head" style="text-align: center">SS Smartphome Shop</h1>
+
+    <!-- EX2.: Add a TABLE with the top 5 products of your shop 
+     EX3.: Insert for each product an image, a title, a description and a price
+    EX4.: Add links to existing Amazon products for each item in the table -->
+    <div class="div-table" style="width: 1000px; height: 100vh">
+      <table
+        border="1px"
+        style="width: inherit; height: inherit; border-collapse: collapse"
+      >
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Links</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Samsung Galaxy</td>
+            <td>
+              <img
+                src="/images/samsung-galaxy-s21ultra.png"
+                style="width: 200px; height: 200px"
+                alt=""
+              />
+              <button onclick="toogleImageVisiblity()">hide</button>
+            </td>
+            <td>Samsung Galaxy S21 Ultra</td>
+            <td>
+              SPECIFICATIONS Release date: January 2021Weight: 227gDimensions:
+              165.1 x 75.6 x 8.9 mmOS: Android 11Screen size:
+              6.8-inchResolution: 1440 x 3200CPU: 2100RAM: 12GB / 16GBStorage:
+              128GB/256GB/512GBBattery: 5
+            </td>
+            <td class="price">€629.95</td>
+            <td>
+              <a href="https://www.techradar.com/news/best-phone/2"
+                >Samsung Galaxy S21</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>iPhone</td>
+            <td>
+              <img
+                src="/images/iphone.jpg"
+                style="width: 400px; height: 200px"
+                alt=""
+              />
+            </td>
+            <td>iPhone 12 Pro / iPhone 12 Pro Max</td>
+            <td>
+              Weight: 189g / 228gDimensions: 146.7mm x 71.5mm x 7.4 mm / 160.8mm
+              x 78.1mm x 7.4mmOS: iOS 14Screen size: 6.1-inch /
+              6.7-inchResolution: 1170 x 2532 / 1284 x 2778
+            </td>
+            <td class="price">€509.95</td>
+            <td>
+              <a href="https://www.techradar.com/news/best-phone/2"
+                >iPhone 12 Pro / iPhone 12 Pro Max</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Samsung Galaxy</td>
+            <td>
+              <img
+                src="/images/Samsung Galaxy.jpg"
+                style="width: 400px; height: 200px"
+                alt=""
+              />
+            </td>
+            <td>Samsung Galaxy S21 / S21 Plus</td>
+            <td>
+              Release date: January 2021Weight: 169g/200gDimensions: 151.7 x
+              71.2 x 7.9 mm / 161.5 x 75.6 x 7.8 mmOS: Android 11Screen size:
+              6.2-inch / 6.7-inchResolution: 1080 x 2400
+            </td>
+            <td class="price">€399.95</td>
+            <td>
+              <a href="https://www.techradar.com/news/best-phone/3"
+                >Samsung Galaxy S21 / S21 Plus</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>iPhone</td>
+            <td>
+              <img
+                src="/images/ihone-4.jpg"
+                style="width: 400px; height: 200px"
+                alt=""
+              />
+            </td>
+            <td>iPhone 12 mini / iPhone 12</td>
+            <td>
+              Weight: 134g / 164gDimensions: 131.5mm x 64.2mm x 7.4mm / 146.7mm
+              x 71.5mm x 7.4 mmOS: iOS 14Screen size: 5.4-inch /
+              6.1-inchResolution: 1080 x 2340 / 1170 x 2532
+            </td>
+            <td class="price">€379.95</td>
+            <td>
+              <a href="https://www.techradar.com/news/best-phone/4"
+                >iPhone 12 mini / iPhone 12</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>OnePlus 9 Pro</td>
+            <td>
+              <img
+                src="/images/one plus.jpg"
+                style="width: 400px; height: 200px"
+                alt=""
+              />
+            </td>
+            <td>OnePlus 9 Pro</td>
+            <td>
+              Release date: March 2021Weight: 197gDimensions: 163.2 x 73.6 x
+              8.7mmOS: Android 11Screen size: 6.7-inchResolution: 1440 x 3216
+            </td>
+            <td class="price">€894</td>
+            <td>
+              <a href="https://www.techradar.com/news/best-phone/5"
+                >OnePlus 9 Pro</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 
+    EX5.:Add a footer with the address and the name of your shop EX6.: Add a message
+    board where the user can type a message in it (no real posting/saving
+    features required!)  -->
+
+      <footer class="footer">
+        <span class="footer-address" onclick="changeFooterAdress()"
+          >haupt str 5, 9155 Ansbach , Germany</span
+        >
+
+        <span>SS smartphone shop</span>
+      </footer>
+    </div>
+
     <script src="/index.js"></script>
   </body>
 </html>
