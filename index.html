@@ -7,16 +7,22 @@
     <title>Java script DOM manipulation Homework</title>
   </head>
   <style>
-    /* body {
-      color: ;
-    } */
-    img {
+    /*  #first {
       display: block;
-    }
+    } */
     .new-class-image-hidden {
       display: none;
     }
     .new-class-image-visible {
+      display: block;
+    }
+    textarea {
+      width: 500px;
+      height: 200px;
+      border: 1px solid #cccccc;
+      padding: 10px;
+      margin: auto;
+      font-family: sans-serif;
       display: block;
     }
   </style>
@@ -50,11 +56,13 @@ Complete exercises from 1 to 6 with just plain HTML. -->
           <tr>
             <td>Samsung Galaxy</td>
             <td>
-              <img
-                src="/images/samsung-galaxy-s21ultra.png"
-                style="width: 200px; height: 200px"
-                alt=""
-              />
+              <div class="first" style="display: block">
+                <img
+                  src="/images/samsung-galaxy-s21ultra.png"
+                  style="width: 200px; height: 200px"
+                  alt=""
+                />
+              </div>
               <button onclick="toogleImageVisiblity()">hide</button>
             </td>
             <td>Samsung Galaxy S21 Ultra</td>
@@ -71,6 +79,7 @@ Complete exercises from 1 to 6 with just plain HTML. -->
               >
             </td>
           </tr>
+
           <tr>
             <td>iPhone</td>
             <td>
@@ -93,6 +102,7 @@ Complete exercises from 1 to 6 with just plain HTML. -->
               >
             </td>
           </tr>
+
           <tr>
             <td>Samsung Galaxy</td>
             <td>
@@ -115,6 +125,7 @@ Complete exercises from 1 to 6 with just plain HTML. -->
               >
             </td>
           </tr>
+
           <tr>
             <td>iPhone</td>
             <td>
@@ -137,6 +148,7 @@ Complete exercises from 1 to 6 with just plain HTML. -->
               >
             </td>
           </tr>
+
           <tr>
             <td>OnePlus 9 Pro</td>
             <td>
@@ -172,6 +184,14 @@ Complete exercises from 1 to 6 with just plain HTML. -->
         >
 
         <span>SS smartphone shop</span>
+        <div>
+          <textarea id="textarearows" ="4" cols="10">
+                enter text...
+                </textarea
+          >
+          <br />
+          <input type="submit" value="Submit" style="text-align: center" />
+        </div>
       </footer>
     </div>
 

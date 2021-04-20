@@ -35,24 +35,36 @@
     toggle a CSS class for all the images in the table; that class should set
     the visibility of the image  */
     const toogleImageVisiblity=function(){
-        let img=document.getElementsByTagName('img')
-        let btn=document.getElementsByTagName("button")
-       /*  console.log(img[0].style.display) */
-        for(let i=0;i<img.length;i++)
-        {console.log(img[i].style.display)
-            if(img[i].style.display==="none")
-            
+        let img=document.getElementsByClassName('first')[0]
+        let btn=document.querySelector("button")
+
+        console.log(img.style.display==="block") /* always flase, it doesnt matter if #first{display:block} or #first{display:none}*/
+        console.log(img.style.display!=="block") /* always true, it doesnt matter if #first{display:block} or #first{display:none}*/
+        console.log(img.style.display)
+        if(img.classList.contains('new-class-image-visible'))
+        {
+            img.classList.remove('new-class-image-visible')
+            img.classList.add('new-class-image-hidden')
+            btn.innerHTML="show"
+        } else {
+          img.classList.remove('new-class-image-hidden')
+          img.classList.add('new-class-image-visible')
+          btn.innerHTML="hide"
+        }
+           /*  if(btn.innerHTML==="hide")
             {
-                img[i].classList.add('new-class-image-hidden')
-                btn[0].innerHTML="show"
+                img.classList.remove('new-class-image-visible')
+                btn.innerHTML="show" 
+                img.classList.add('new-class-image-hidden')
             }
             else{
-                img[i].classList.add('new-class-image-visible')
-                btn[0].innerHTML="hide"
-            }
+                 img.classList.remove('new-class-image-hidden') 
+                img.classList.add('new-class-image-visible')
+                btn.innerHTML="hide"
+            } */
 
         }
-    }
+    
     /* toogleImageVisiblity()
     const hideVisibleImage=function(){
         let image=document.getElementsByTagName("image")

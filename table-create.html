@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container"></div>
+
+    <script>
+      let div = document.querySelector("div");
+      let table = document.createElement("table");
+      let thead = document.createElement("thead");
+      let arrThText = [
+        "Product",
+        "Image",
+        "Title",
+        "discription",
+        "Price",
+        "Link",
+      ];
+      let tr = document.createElement("tr");
+      for (let i = 0; i < 5; i++) {
+        let th = document.createElement("th");
+        th.innerHTML = arrThText[i];
+        tr.appendChild(th);
+      }
+      thead.appendChild(tr);
+      table.appendChild(thead);
+
+      let arrImage = [
+        "/images/samsung-galaxy-s21ultra.png",
+        "/images/samsung-galaxy-s21ultra.png",
+        "/images/samsung-galaxy-s21ultra.png",
+        "/images/samsung-galaxy-s21ultra.png",
+        "/images/samsung-galaxy-s21ultra.png",
+      ];
+      let arrProduct = [
+        "Samsung Galaxy",
+        "iphone",
+        "Samsung Galaxy",
+        "iphone",
+        "One Plus",
+      ];
+      let arrDescription = [
+        " Weight: 134g / 164gDimensions: 131.5mm x 64.2mm x 7.4mm / 146.7mmx 71.5mm x 7.4 mmOS: iOS 14Screen size: 5.4-inch / 6.1-inchResolution: 1080 x 2340 / 1170 x 2532",
+        " Weight: 134g / 164gDimensions: 131.5mm x 64.2mm x 7.4mm / 146.7mmx 71.5mm x 7.4 mmOS: iOS 14Screen size: 5.4-inch /6.1-inchResolution: 1080 x 2340 / 1170 x 2532",
+        " Weight: 134g / 164gDimensions: 131.5mm x 64.2mm x 7.4mm / 146.7mmx 71.5mm x 7.4 mmOS: iOS 14Screen size: 5.4-inch /6.1-inchResolution: 1080 x 2340 / 1170 x 2532",
+        " Weight: 134g / 164gDimensions: 131.5mm x 64.2mm x 7.4mm / 146.7mm x 71.5mm x 7.4 mmOS: iOS 14Screen size: 5.4-inch /6.1-inchResolution: 1080 x 2340 / 1170 x 2532",
+        " Weight: 134g / 164gDimensions: 131.5mm x 64.2mm x 7.4mm / 146.7mm x 71.5mm x 7.4 mmOS: iOS 14Screen size: 5.4-inch /6.1-inchResolution: 1080 x 2340 / 1170 x 2532",
+      ];
+      let arrTitle = [
+        "Samsung Galaxy",
+        "iphone",
+        "Samsung Galaxy",
+        "iphone",
+        "One Plus",
+      ];
+      let aText = [
+        "Samsung Galaxy",
+        "iphone",
+        "Samsung Galaxy",
+        "iphone",
+        "One Plus",
+      ];
+      let arrPrice = ["€" + 300, "€" + 300, "€" + 300, "€" + 300, "€" + 300];
+      let arrLinks = [
+        "https://www.techradar.com/news/best-phone/4",
+        "https://www.techradar.com/news/best-phone/4",
+        "https://www.techradar.com/news/best-phone/4",
+        "https://www.techradar.com/news/best-phone/4",
+        "https://www.techradar.com/news/best-phone/4",
+      ];
+
+      let arrTbodyTrTd = [];
+      for (let j = 0; j < 5; j++) {
+        arrTbodyTrTd[j] = [
+          arrProduct[j],
+          '<img src="' + arrImage[j] + '">',
+          arrTitle[j],
+          arrDescription[j],
+          arrPrice[j],
+          '<a href="' + arrLinks[j] + '">' + aText[j] + "</a>",
+        ];
+      }
+
+      let tbody = document.createElement("tbody");
+      for (let i = 0; i < 4; i++) {
+        tr = document.createElement("tr");
+        for (let j = 0; j < 6; j++) {
+          let td = document.createElement("td");
+          td.innerHTML = arrTbodyTrTd[i][j];
+          tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+      }
+      table.appendChild(tbody);
+      div.appendChild(table);
+    </script>
+  </body>
+</html>
